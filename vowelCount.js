@@ -3,7 +3,17 @@
 
 // Passing the string "Hello world!" as an argument to your vowelCount() function would result in the number 3 being returned.
 
-
+function vowelCount(str) {
+    let count = 0;
+    const vowels= {"a": 1,"e": 1,"i": 1,"o": 1,"u": 1}; // change to obj
+    [...str].forEach((el) => {
+      if(el.toLowerCase() in vowels){ // check using obj lookup O(1) time
+        console.log('RUNNING')
+        count++
+      }
+    })
+    return count
+  }
 
 // Tests
 // console.log(vowelCount('-bcd-fgh-jklmn-pqrst-vwxyz')); // <--- 0
