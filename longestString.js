@@ -1,5 +1,15 @@
 // Write a function that takes an array of strings and return the longest string in the array.
 
+function longestString(arr) {
+    let longest = arr[0];
+    for(let i = 1; i < arr.length; i++){
+      if(longest.length < arr[i].length){
+       longest = arr[i];
+      }
+    }
+    return longest;
+   }
+
 // Tests:
 
 const strings1 = ['short', 'really, really long!', 'medium'];
