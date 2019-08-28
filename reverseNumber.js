@@ -1,5 +1,14 @@
 // Write a function called reverseNumber that reverses a number.
 
-// Tests:
+function reverseNumber(num) {
+  let numStr = num.toString();
+  let arr = numStr.split("");
+  let arrReverse = [];
+  for (let i = 0; i < numStr.length; i++) {
+    arrReverse[i] = arr.pop();
+  }
+  return parseFloat(arrReverse.join(""));
+}
 
-// console.log(reverseNumber(12345)); // => 54321
+// Tests:
+console.log(reverseNumber(12345)); // => 54321
