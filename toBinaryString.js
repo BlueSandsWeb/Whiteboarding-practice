@@ -2,9 +2,22 @@
 // toBinaryString(6) should return "110" (no leading 0).
 // Use of the native method number.toString(2);  is disallowed.
 
-// Version 1
+// Version 1 - breaks a rule
+// function toBinaryString(number) {
+//   return (number >>> 0).toString(2);
+// }
+
+// Version 2 works well, and doesn't break any rules
 function toBinaryString(number) {
-  return (number >>> 0).toString(2);
+  let arr = [];
+  if (number === 0) {
+    return "0";
+  }
+  while (number > 0) {
+    arr.unshift(number % 2);
+    number = Math.floor(number / 2);
+  }
+  return arr.join("");
 }
 
 console.log(toBinaryString(0), toBinaryString(0) === "0"); // <--- 0
