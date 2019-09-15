@@ -4,7 +4,7 @@
 
 // Version 1 - breaks a rule
 // function toBinaryString(number) {
-//   return (number >>> 0).toString(2);
+//   return number.toString(2);
 // }
 
 // Version 2 works well, and doesn't break any rules
