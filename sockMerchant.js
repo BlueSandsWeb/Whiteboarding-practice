@@ -60,4 +60,4 @@ function sockMerchant(n, ar) {
 
 // tests
 console.log(3 === sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]));
-console.log(3 === sockMerchant(10, [1, 1, 3, 1, 2, 1, 3, 3, 3, 3]));
+console.log(4 === sockMerchant(10, [1, 1, 3, 1, 2, 1, 3, 3, 3, 3]));
