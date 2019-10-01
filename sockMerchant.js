@@ -39,9 +39,24 @@
 
 // 3
 
-// Function
 // answer
-function sockMerchant(n, ar) {}
+function sockMerchant(n, ar) {
+  let hash = {};
+  ar.forEach(item => {
+    if (hash[`${item}`]) {
+      hash[`${item}`] += 1;
+    } else {
+      hash[`${item}`] = 1;
+    }
+  });
+  let sockPairs = 0;
+  Object.values(hash).forEach(val => {
+    if (val > 1) {
+      sockPairs += (val - (val % 2)) / 2;
+    }
+  });
+  return sockPairs;
+}
 
 // tests
 console.log(3 === sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]));
