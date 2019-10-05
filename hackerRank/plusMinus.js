@@ -47,6 +47,10 @@
 // positive numbers, negative numbers, and zero in the array.
 // The proportions of occurrence are positive: , negative: and zeros: .
 
-function plusMinus(arr) {}
+function plusMinus(arr) {
+  arr.forEach(item => {
+    return null;
+  });
+}
 
 console.log(plusMinus([-4, 3, -9, 0, 4, 1]));
