@@ -48,14 +48,11 @@
 // The proportions of occurrence are positive: , negative: and zeros: .
 
 function plusMinus(arr) {
-  // Have a sum variable
   let sum = arr.length;
-  // count negative
   let negCount = 0;
-  // count 0
   let zeroCount = 0;
-  // count positive
   let posCount = 0;
+
   arr.forEach(item => {
     if (item > 0) {
       posCount++;
@@ -64,7 +61,6 @@ function plusMinus(arr) {
     } else if (item < 0) {
       negCount++;
     }
-    return null;
   });
 
   console.log(posCount / sum);
