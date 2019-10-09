@@ -59,3 +59,20 @@
 // Explanation
 
 // The staircase is right-aligned, composed of # symbols and spaces, and has a height and width of.
+
+function staircase(n) {
+  let string = "";
+  for (let i = 0; i < n; i++) {
+    let numSpaces = n - i;
+    let subString = "";
+    for (let j = 0; j < numSpaces - 1; j++) {
+      subString += " ";
+    }
+    for (let j = 0; j < n - numSpaces; j++) {
+      subString += "#";
+    }
+    console.log((subString += "#"));
+  }
+}
+
+staircase(6);
