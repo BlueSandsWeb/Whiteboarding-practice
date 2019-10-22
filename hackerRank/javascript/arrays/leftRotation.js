@@ -51,4 +51,13 @@
 // When we perform d = 4 left rotations, the array undergoes the following sequence of changes:
 // [1,2,3,4,5] -> [2,3,4,5,1] -> [3,4,5,1,2] -> [4,5,1,2,3] -> [5,1,2,3,4]
 
-function rotLeft(a, d) {}
+function rotLeft(a, d) {
+  const newArr = [];
+  for (let i = d; i < a.length; i++) {
+    newArr.push(a[i]);
+  }
+  for (let i = 0; i < d; i++) {
+    newArr.push(a[i]);
+  }
+  return newArr;
+}
