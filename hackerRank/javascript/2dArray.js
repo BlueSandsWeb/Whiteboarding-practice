@@ -101,4 +101,23 @@
 //   2
 // 1 2 4
 
-function hourglassSum(arr) {}
+function hourglassSum(arr) {
+  let bigSum = null;
+  //loop A (columns)
+  for (let row = 1; row < arr.length - 1; row++) {
+    for (let col = 1; col < arr.length - 1; col++) {
+      // top row
+      let sum =
+        arr[row - 1][col - 1] + arr[row - 1][col] + arr[row - 1][col + 1];
+      // middle of hourglass
+      sum += arr[row][col];
+      // Bottom Row
+      sum += arr[row + 1][col - 1] + arr[row + 1][col] + arr[row + 1][col + 1];
+      if (bigSum === null || bigSum < sum) {
+        bigSum = sum;
+      }
+    }
+  }
+  console.log(bigSum);
+  return bigSum;
+}
