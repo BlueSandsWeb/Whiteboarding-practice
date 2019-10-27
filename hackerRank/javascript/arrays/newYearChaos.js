@@ -31,7 +31,7 @@
 // Too chaotic
 
 function minimumBribes(q) {
-  // Second try, Do something similar to a bubble sort, that moves an array using swaps to match
+  // Second try, Do something similar to a bubble sort, that moves an array using swaps to match and counts swaps
   console.log(q);
 
   for (let i = 1; i <= q.length; i++) {}
@@ -59,3 +59,4 @@ minimumBribes([1, 2, 5, 3, 7, 8, 6, 4]); // -> 7
 minimumBribes([1, 2, 5, 3, 4, 7, 8, 6]); // -> 4
 
 // [ 1 2 5 3 7 8 6 4 ]
+// [ 1 2 3 4 5 6 7 8 ]
