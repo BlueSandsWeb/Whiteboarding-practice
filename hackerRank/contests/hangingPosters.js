@@ -25,5 +25,18 @@
 
 // So, the height of the ladder required is 12.
 
+function solve(h, wallPoints, lengths) {
+  // Write your code here
+  // EQ per ladder height is wallPoint - (length * .25) - h
+  let ladderHeight = 0;
+  for (let i = 0; i < wallPoints.length; i++) {
+    let currentLadderHeight = wallPoints[i] - lengths[i] * 0.25 - h;
+    ladderHeight < currentLadderHeight
+      ? (ladderHeight = currentLadderHeight)
+      : null;
+  }
+  return Math.ceil(ladderHeight);
+}
+
 console.log(solve(5, [15, 11, 17], [5, 1, 2]) === 12);
 console.log(solve(5, [5, 5], [4, 4]) === 0);
