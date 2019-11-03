@@ -15,9 +15,10 @@ function containsSum(arr, k) {
     }
     referenceObj[`${k - arr[i]}`] = true;
   }
-  //   console.log(referenceObj);
+  return false;
 }
 
+// Tests
 console.log(containsSum([10, 15, 3, 7], 17) === true);
 console.log(containsSum([10, 7, 11, 22, 23], 21) === true);
 console.log(
@@ -26,3 +27,4 @@ console.log(
     7
   ) === true
 );
+console.log(containsSum([0, 1, 2, 3, 4], 100) === false);
