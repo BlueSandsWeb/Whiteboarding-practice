@@ -15,8 +15,27 @@ class tree {
     const node = new Node(value);
     if (this.head === null) {
       this.head = node;
+    } else {
+      let current = this.head;
+      let keepGoing = true;
+      while(keepGoing){
+        if(current.val > node.val){
+          if(current.right === null){
+            current.right = node;
+            return;
+          } else {
+            current = current.right;
+          }
+        } else if (current.val < node.val){
+          if(current.left === null){
+            current.left = node;
+            return;
+          } else {
+            current = current.right;
+          }
+        }
+      }
     }
-    return null;
   }
 
   search() {
