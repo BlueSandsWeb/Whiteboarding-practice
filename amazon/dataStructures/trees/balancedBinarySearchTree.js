@@ -26,7 +26,11 @@ class tree {
     return null;
   }
 
-  rebalance() {
+  pivotRight() {
+    return null;
+  }
+
+  pivotLeft() {
     return null;
   }
 }
