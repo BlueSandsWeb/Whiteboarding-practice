@@ -14,6 +14,7 @@ class tree {
   add(value) {
     const node = new Node(value);
     if (this.head === null) {
+      this.head = node;
     }
     return null;
   }
