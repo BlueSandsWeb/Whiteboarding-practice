@@ -26,6 +26,10 @@ class graph {
     }
   }
 
+  dft(start) {}
+
+  bft(start) {}
+
   bfs(start, end) {
     let q = [];
     let visited = {};
@@ -53,8 +57,29 @@ class graph {
     }
   }
 
-  dfs(v) {
-    // uses a stack to search
+  dfs(startV, endV) {
+    let visited = {};
+    let stack = [];
+    stack.push([startV]);
+
+    while (stack.length > 0) {
+      let path = stack.pop();
+      let vertex = path[path.length - 1];
+      let neighbors = this.adjList.get(path[path.length - 1]);
+
+      for (let i = 0; i < neighbors.length; i++) {
+        if (neighbors[i] === endV) {
+          path.push(neighbors[i]);
+          return path;
+        }
+        if (!visited[vertex]) {
+          visited[vertex] = true;
+          neighbors.forEach(neighbor => {
+            stack.push([...path, neighbor]);
+          });
+        }
+      }
+    }
     return null;
   }
 }
@@ -80,3 +105,5 @@ g.addEdge("c", "f");
 g.printGraph();
 console.log(g.bfs("a", "f"));
 console.log(g.bfs("c", "f"));
+console.log(g.dfs("a", "f"));
+console.log(g.dfs("a", "c"));
