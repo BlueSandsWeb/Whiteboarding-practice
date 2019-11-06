@@ -1,8 +1,8 @@
-class Node{
-  constructor(val){
-    this.val = val,
-    this.left = null,
-    this.right = null,
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
   }
 }
 
@@ -18,16 +18,16 @@ class tree {
     } else {
       let current = this.head;
       let keepGoing = true;
-      while(keepGoing){
-        if(current.val > node.val){
-          if(current.right === null){
+      while (keepGoing) {
+        if (current.val > node.val) {
+          if (current.right === null) {
             current.right = node;
             return;
           } else {
             current = current.right;
           }
-        } else if (current.val < node.val){
-          if(current.left === null){
+        } else if (current.val < node.val) {
+          if (current.left === null) {
             current.left = node;
             return;
           } else {
