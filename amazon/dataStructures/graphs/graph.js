@@ -26,9 +26,38 @@ class graph {
     }
   }
 
-  dft(start) {}
+  bft(start) {
+    const visited = new Set();
+    const q = [];
+    q.push(start);
+    while (q.length > 0) {
+      let vertex = q.shift();
+      if (!visited.has(vertex)) {
+        visited.add(vertex);
+        let neighbors = this.adjList.get(vertex);
+        neighbors.forEach(neighbor => {
+          q.push(neighbor);
+        });
+      }
+    }
+    return visited;
+  }
 
-  bft(start) {}
+  // recursive
+  dft(start, visited = null) {
+    if (visited === null) {
+      visited = new Set();
+    }
+
+    if (!visited.has(start)) {
+      visited.add(start);
+      console.log(start);
+      this.adjList.get(start).forEach(item => {
+        this.dft(item, visited);
+      });
+    }
+    return visited;
+  }
 
   bfs(start, end) {
     let q = [];
@@ -103,7 +132,10 @@ g.addEdge("e", "c");
 g.addEdge("c", "f");
 
 g.printGraph();
-console.log(g.bfs("a", "f"));
-console.log(g.bfs("c", "f"));
-console.log(g.dfs("a", "f"));
-console.log(g.dfs("a", "c"));
+console.log("");
+console.log("DFT: ", g.dft("a"));
+console.log("BFT: ", g.bft("a"));
+console.log("bfs a > f:", g.bfs("a", "f"));
+console.log("bfs c > f:", g.bfs("c", "f"));
+console.log("dfs a > f:", g.dfs("a", "f"));
+console.log("dfs a > c:", g.dfs("a", "c"));
