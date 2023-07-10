@@ -28,6 +28,22 @@
 // @return {number}
 //
 
-const lengthOfLongestSubstring = function (s) {};
+const lengthOfLongestSubstring = function (s: string): number {
+  const length = 0;
+  let longest = "";
+  let pointer1 = 0;
+  let pointer2 = 0;
 
-console.log(lengthOfLongestSubstring("abcabcbb"));
+  let keepGoing = true;
+  let i = 0;
+  while (pointer1 < s.length && keepGoing) {
+    console.log("i :>> ", i);
+    if (i++ > 50) {
+      keepGoing = false;
+    }
+  }
+
+  return length;
+};
+
+console.log(3 === lengthOfLongestSubstring("abcabcbb"));
