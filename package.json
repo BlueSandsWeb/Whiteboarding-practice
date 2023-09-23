@@ -1,0 +1,23 @@
+{
+  "name": "whiteboarding-practice",
+  "version": "1.0.0",
+  "description": "whiteboarding practice for interviews",
+  "main": "none",
+  "scripts": {
+    "test": "none",
+    "ts-run": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jon-Bernal/Whiteboarding-practice.git"
+  },
+  "author": "Jon Bernal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jon-Bernal/Whiteboarding-practice/issues"
+  },
+  "homepage": "https://github.com/Jon-Bernal/Whiteboarding-practice#readme",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
